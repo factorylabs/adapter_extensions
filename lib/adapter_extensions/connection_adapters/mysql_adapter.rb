@@ -54,7 +54,7 @@ module ActiveRecord #:nodoc:
           q << " ENCLOSED BY '#{options[:fields][:enclosed_by]}'" if options[:fields][:enclosed_by]
         end
         q << " IGNORE #{options[:ignore]} LINES" if options[:ignore]
-        q << " (#{options[:columns].map { |c| quote(c.to_s) }.join(',')})" if options[:columns]
+        q << " (#{options[:columns].map { |c| quote_column_name(c.to_s) }.join(',')})" if options[:columns]
         execute(q)
       end
       
