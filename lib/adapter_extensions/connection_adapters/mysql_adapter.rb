@@ -47,7 +47,7 @@ module ActiveRecord #:nodoc:
           @bulk_load_enabled = true
         end
 
-        q = "LOAD DATA LOCAL INFILE '#{file}' INTO TABLE #{table_name}"
+        q = "LOAD DATA LOCAL INFILE '#{file}' #{options[:replace] ? 'REPLACE' : ''} INTO TABLE #{table_name}"
         if options[:fields]
           q << " FIELDS"
           q << " TERMINATED BY '#{options[:fields][:delimited_by]}'" if options[:fields][:delimited_by]
