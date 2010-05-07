@@ -60,7 +60,7 @@ PKG_FILES = FileList[
 ] - [ 'test' ]
 
 spec = Gem::Specification.new do |s|
-  s.name = 'adapter_extensions'
+  s.name = 'factorylabs-adapter_extensions'
   s.version = PKG_VERSION
   s.summary = "Extensions to Rails ActiveRecord adapters."
   s.description = <<-EOF
